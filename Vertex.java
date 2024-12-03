@@ -16,6 +16,30 @@ public class Vertex {
       this.destinationVertex = destinationVertex;
       this.weight = weight;
     }
+
+    public void setOrigin(Vertex vertex){
+      originVertex = vertex;
+    }
+
+    public String displayOrigin(){
+      return originVertex.toString();
+    }
+
+    public void changeDestination(Vertex vertex){
+      destinationVertex = vertex;
+    }
+
+    public String displayDestination(){
+      return destinationVertex.toString();
+    }
+
+    public void setWeight(int weight){
+      this.weight = weight;
+    }
+
+    public int displayWeight(){
+      return weight;
+    }
   }
 
   private String label;
@@ -42,16 +66,26 @@ public class Vertex {
     return this.label;
   }
 
+  public void setCoordinates(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+
   public String coordinates(){
     return "(" + x + "," + y + ")";
   }
 
-  public void addEdge(Edge edge){
+  public void addEdge(Vertex originVertex, Vertex destinationVertex){
+    Vertex.Edge edge = new Vertex.Edge(originVertex, destinationVertex);
     edges.add(edge);
   }
 
   public void removeEdge(Edge edge){
     edges.remove(edge);
+  }
+
+  public void addWeight(Edge edge, int weight){
+    edge.setWeight(weight);
   }
 
   public void visited(){
