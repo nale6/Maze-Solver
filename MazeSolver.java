@@ -85,8 +85,8 @@ public class MazeSolver {
             path.add(new int[]{current.getLabel().charAt(1) - '0', current.getLabel().charAt(3) - '0'});
             if (current.getLabel().equals("(0,0)")) break;
             for (Vertex.Edge edge : current.edges) {
-                if (edge.destinationVertex == current) {
-                    current = edge.originVertex;
+                if (edge.getDestinationVertex() == current) {
+                    edge.setOrigin(current);
                     break;
                 }
             }

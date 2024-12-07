@@ -3,8 +3,8 @@ import java.util.List;
 public class Vertex {
 
   public class Edge{
-    public Vertex originVertex, destinationVertex;
-    public Integer weight = 0;
+    private Vertex originVertex, destinationVertex;
+    private Integer weight = 0;
 
     public Edge(Vertex originVertex, Vertex destinationVertex){
       this.originVertex = originVertex;
@@ -15,6 +15,30 @@ public class Vertex {
       this.originVertex = originVertex;
       this.destinationVertex = destinationVertex;
       this.weight = weight;
+    }
+
+    public Vertex getOriginVertex(){
+      return originVertex;
+    }
+
+    public void setOriginVertex(Vertex vertex){
+      originVertex = vertex;
+    }
+
+    public Vertex getDestinationVertex(){
+      return destinationVertex;
+    }
+
+    public void setDestinationVertex(Vertex vertex){
+      destinationVertex = vertex;
+    }
+
+    public Integer getWeight(){
+      return weight;
+    }
+
+    public void setWeight(Integer number){
+      weight = number;
     }
 
     public void setOrigin(Vertex vertex){
